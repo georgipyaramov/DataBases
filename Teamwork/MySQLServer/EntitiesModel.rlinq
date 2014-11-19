@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DomainModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="2.0.0.0" name="MySQLContext" namespace="MySQLServer" showPropertiesCompartment="true" xmlns="http://www.telerik.com/ORM">
+  <orm:orm name="MySQLContext" backend="mysql" xmlns:orm="http://tempuri.org/ORM">
+    <orm:namespace name="MySQLServer" default="true">
+      <orm:class name="sexStoreReports" use-default-mapping="true" uniqueId="b9d48787-8a52-4666-b27a-59c0a65abe4d">
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:field name="_id" property="Id" uniqueId="5e1fd056-dc77-45ea-9b36-5162683d0e8f" type="System.Int32">
+          <orm:column name="Id" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_productCode" property="ProductCode" uniqueId="08e6102e-27ab-4c75-bdc0-fc2e8c6ea0d2" type="System.Int32">
+          <orm:column name="ProductCode" sql-type="integer" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_name" property="Name" uniqueId="ebd435cc-460d-46ce-9213-ea8c142df61b" type="System.String">
+          <orm:column name="nme" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthStringConverter" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="_soldInShops" property="SoldInShops" uniqueId="d5b34f7f-b5c7-4de9-b199-9d9b534eeed7" type="System.String">
+          <orm:column name="SoldInShops" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthStringConverter" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="_totalQuantitySold" property="TotalQuantitySold" uniqueId="09072e51-a46d-4e33-9ceb-900eb62ca7b2" type="System.Int32">
+          <orm:column name="TotalQuantitySold" sql-type="integer" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_totalIncomes" property="TotalIncomes" uniqueId="333e162f-fbca-4e61-984c-caa757f37971" type="System.Double">
+          <orm:column name="TotalIncomes" sql-type="double" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.DoubleConverter" ado-type="Double" />
+        </orm:field>
+      </orm:class>
+    </orm:namespace>
+    <orm:schema schema="" />
+    <orm:relational-naming-settings>
+      <orm:source-strategy>Property</orm:source-strategy>
+      <orm:remove-camel-case>False</orm:remove-camel-case>
+    </orm:relational-naming-settings>
+  </orm:orm>
+  <ModelSettings xmlns="">
+    <AppConfigConnectionPropertyName>MySQLConnStrDKostov</AppConfigConnectionPropertyName>
+    <AppConfigConnectionString>server=localhost;database=sexStore;uid=root;pooling=true</AppConfigConnectionString>
+    <NamingSettings>
+      <ClassRules>
+        <CaseMode>PascalCase</CaseMode>
+        <PluralizationMode>Singularize</PluralizationMode>
+      </ClassRules>
+      <FieldRules>
+        <AddPrefix>_</AddPrefix>
+        <CaseMode>CamelCase</CaseMode>
+      </FieldRules>
+      <PropertyRules>
+        <CaseMode>PascalCase</CaseMode>
+      </PropertyRules>
+      <NavigationPropertyRules />
+    </NamingSettings>
+    <CodeGenerationSettings>
+      <MappingDefinitionType>Xml</MappingDefinitionType>
+    </CodeGenerationSettings>
+    <SchemaUpdateSettings>
+      <ExecuteScript>true</ExecuteScript>
+      <DeploymentProject>MySQLServer</DeploymentProject>
+      <UpdateDatabaseOperation>Migrate</UpdateDatabaseOperation>
+      <ShowAllTables>true</ShowAllTables>
+    </SchemaUpdateSettings>
+    <BackendConfigurationSettings>
+      <BackendConfiguration>
+        <Backend>MySql</Backend>
+        <ProviderName>MySql.Data.MySqlClient</ProviderName>
+      </BackendConfiguration>
+    </BackendConfigurationSettings>
+  </ModelSettings>
+  <Types>
+    <DomainClass Id="b9d48787-8a52-4666-b27a-59c0a65abe4d" name="sexStoreReports" namespace="MySQLServer" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="5e1fd056-dc77-45ea-9b36-5162683d0e8f" name="Id" type="Int32" label="Id : Int32" identity="true" fieldName="_id" />
+      <Property Id="08e6102e-27ab-4c75-bdc0-fc2e8c6ea0d2" name="ProductCode" type="Int32" label="ProductCode : Int32" fieldName="_productCode" />
+      <Property Id="ebd435cc-460d-46ce-9213-ea8c142df61b" name="Name" label="Name : String" fieldName="_name" />
+      <Property Id="d5b34f7f-b5c7-4de9-b199-9d9b534eeed7" name="SoldInShops" label="SoldInShops : String" fieldName="_soldInShops" />
+      <Property Id="09072e51-a46d-4e33-9ceb-900eb62ca7b2" name="TotalQuantitySold" type="Int32" label="TotalQuantitySold : Int32" fieldName="_totalQuantitySold" />
+      <Property Id="333e162f-fbca-4e61-984c-caa757f37971" name="TotalIncomes" type="Double" label="TotalIncomes : Double" fieldName="_totalIncomes" />
+    </DomainClass>
+  </Types>
+  <domainContext>
+    <domainModelHasDomainContext Id="b111b997-74a9-486f-ad47-03dc8459d641">
+      <domainContainer name="MySQLContext" namespace="MySQLServer" showPropertiesCompartment="true">
+        <entitySetProperty name="sexStoreReports" namespace="MySQLServer" type="sexStoreReports" label="sexStoreReports : IQueryable&lt;MySQLServer.sexStoreReports&gt;" />
+      </domainContainer>
+    </domainModelHasDomainContext>
+  </domainContext>
+</DomainModel>
